@@ -27,8 +27,8 @@ Este proyecto fue desarrollado con **Angular 19** para el frontend y **Spring Bo
     npm install
     ng serve
 ## Documentación Adicional
-- Frontend: ./frontend/README.md
-- Backend: ./backend/README.md
+- Frontend: [Ver README del frontend](./frontend/README.md)
+- Backend: [Ver README del backend](./backend/README.md)
 
 ## Despliegue
 Siga las instrucciones en los READMEs específicos de cada carpeta.
