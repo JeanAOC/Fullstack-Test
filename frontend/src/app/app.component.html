@@ -1,0 +1,11 @@
+<nav>
+  <a routerLink="/">Inicio</a>
+  <a *ngIf="!isLoggedIn()" routerLink="/login">Login</a>
+  <a *ngIf="!isLoggedIn()" routerLink="/register">Registro</a>
+  <a *ngIf="isLoggedIn() && !isAdmin()" routerLink="/user/posts">Mis Posts</a>
+  <a *ngIf="isLoggedIn() && !isAdmin()" routerLink="/user/posts/create">Crear Post</a>
+  <a *ngIf="isLoggedIn() && isAdmin()" routerLink="/admin">Admin</a> <!-- Enlace para administradores -->
+  <button *ngIf="isLoggedIn()" (click)="logout()">Cerrar Sesión</button>
+</nav>
+
+<router-outlet></router-outlet>

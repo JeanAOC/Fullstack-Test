@@ -1,0 +1,27 @@
+<div class="posts-container">
+  <h2>Mis Posts</h2>
+
+  <div *ngFor="let post of posts" class="post-card">
+    <div *ngIf="!post.isEditing">
+      <h3>{{ post.titulo }}</h3>
+      <p>{{ post.contenido }}</p>
+      <button (click)="editPost(post)">Editar</button>
+      <button class="button-eliminar" (click)="deletePost(post.id)">Eliminar</button>
+    </div>
+
+    <div *ngIf="post.isEditing">
+      <form (ngSubmit)="savePost(post)">
+        <div>
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" [(ngModel)]="post.titulo" name="titulo" required>
+        </div>
+        <div>
+          <label for="contenido">Contenido:</label>
+          <textarea id="contenido" [(ngModel)]="post.contenido" name="contenido" required></textarea>
+        </div>
+        <button type="submit">Guardar</button>
+        <button type="button" (click)="post.isEditing = false">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>

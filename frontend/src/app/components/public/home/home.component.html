@@ -1,0 +1,16 @@
+<div class="home-container">
+  <h1>Post Publicos</h1>
+
+  <div *ngFor="let post of posts" class="post-card">
+    <h2>
+      <a [routerLink]="['/post', post.id]">{{ post.titulo }}</a>
+    </h2>
+    <p>{{ post.contenido }}</p>
+  </div>
+
+  <div class="pagination">
+    <button *ngFor="let page of getPages()" (click)="onPageChange(page)" [class.active]="page === currentPage">
+      {{ page }}
+    </button>
+  </div>
+</div>

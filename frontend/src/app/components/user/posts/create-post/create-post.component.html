@@ -1,0 +1,14 @@
+<div class="create-post-container">
+    <h2>Crear Nuevo Post</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" [(ngModel)]="newPost.titulo" name="titulo" required>
+      </div>
+      <div>
+        <label for="contenido">Contenido:</label>
+        <textarea id="contenido" [(ngModel)]="newPost.contenido" name="contenido" required></textarea>
+      </div>
+      <button type="submit">Crear Post</button>
+    </form>
+  </div>

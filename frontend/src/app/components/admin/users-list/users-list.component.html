@@ -1,0 +1,32 @@
+<div class="users-management">
+  <h2>Gestión de Usuarios</h2>
+  <div class="users-table-container">
+    <table class="users-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre de usuario</th>
+          <th>Email</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.role }}</td>
+          <td class="actions">
+            <select [(ngModel)]="user.newRole" class="role-select">
+              <option value="USER">USER</option>
+              <option value="ADMIN">ADMIN</option>
+            </select>
+            <button (click)="updateUserRole(user)" class="btn btn-update">Cambiar Rol</button>
+            <button (click)="deleteUser(user.id)" class="btn btn-delete">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

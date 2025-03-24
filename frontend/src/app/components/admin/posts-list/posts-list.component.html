@@ -1,0 +1,9 @@
+<div>
+  <h2>Gestión de Posts</h2>
+  <div *ngFor="let post of posts" class="post-card">
+    <h3>{{ post.titulo }}</h3>
+    <p>{{ post.contenido }}</p>
+    <p><small>Publicado por {{ post.autorUsername }}</small></p>
+    <button (click)="deletePost(post.id)">Eliminar</button>
+  </div>
+</div>
